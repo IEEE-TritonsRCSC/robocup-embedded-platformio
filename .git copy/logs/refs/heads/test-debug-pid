@@ -1,9 +1,0 @@
-0000000000000000000000000000000000000000 b6fc07808aa46cbb0994298efc955a4e07e362d7 sukhjeetsekhon <sjtsekhon@gmail.com> 1770538890 -0800	branch: Created from debug-pid
-b6fc07808aa46cbb0994298efc955a4e07e362d7 295b11ec28055875a1b80b8339cdf815ab1ac113 sukhjeetsekhon <sjtsekhon@gmail.com> 1770674455 -0800	commit: create pid-visualizer with two way communication
-295b11ec28055875a1b80b8339cdf815ab1ac113 ce94aaaa142bb6b1cabdc760b564d08cb6bcc2dc sukhjeetsekhon <sjtsekhon@gmail.com> 1770676281 -0800	commit: Dribbler problem with dash doesn't happen anymore
-ce94aaaa142bb6b1cabdc760b564d08cb6bcc2dc f49ee22ad0cf67bc42f96ece65e4b220ab0244ab sukhjeetsekhon <sjtsekhon@gmail.com> 1770918453 -0800	commit: Refactor live telemetry plotting constants and socket handling
-f49ee22ad0cf67bc42f96ece65e4b220ab0244ab 4fd40c592b747338a96e4ae4216e88488fb55144 sukhjeetsekhon <sjtsekhon@gmail.com> 1770919168 -0800	commit: Refactor STM32 drivetrain helpers and PID calculations
-4fd40c592b747338a96e4ae4216e88488fb55144 10e8d8f558ee515d5e19d6059fc53359409d6548 sukhjeetsekhon <sjtsekhon@gmail.com> 1770930244 -0800	commit: Add deterministic omni drivetrain simulator scaffold
-10e8d8f558ee515d5e19d6059fc53359409d6548 f1f10c70c25c02e5452c1b78bffa45b94f7154d1 sukhjeetsekhon <sjtsekhon@gmail.com> 1770933723 -0800	commit: Add GUI command input and realism knobs to simulator
-f1f10c70c25c02e5452c1b78bffa45b94f7154d1 10e8d8f558ee515d5e19d6059fc53359409d6548 sukhjeetsekhon <sjtsekhon@gmail.com> 1771018710 -0800	reset: moving to HEAD~1
-10e8d8f558ee515d5e19d6059fc53359409d6548 4fd40c592b747338a96e4ae4216e88488fb55144 sukhjeetsekhon <sjtsekhon@gmail.com> 1771018755 -0800	reset: moving to HEAD~1

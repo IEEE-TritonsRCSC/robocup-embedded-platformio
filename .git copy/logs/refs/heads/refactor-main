@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 8c191652d2b137a0e3cd129d0eb42ab057b34b1a sukhjeetsekhon <sjtsekhon@gmail.com> 1771272544 -0800	branch: Created from list
-8c191652d2b137a0e3cd129d0eb42ab057b34b1a b27689a3ef965ea65dca55e9f1ed1061a8dbec76 sukhjeetsekhon <sjtsekhon@gmail.com> 1771272587 -0800	commit: remove commented pid values
-b27689a3ef965ea65dca55e9f1ed1061a8dbec76 4c93a7a7501c702830802b11dd4a0f8125e7b30e sukhjeetsekhon <sjtsekhon@gmail.com> 1771274139 -0800	commit: make pid_gains struct
-4c93a7a7501c702830802b11dd4a0f8125e7b30e f0bf09c23bab0b87c089cdba7b1eedfdb29d64e3 sukhjeetsekhon <sjtsekhon@gmail.com> 1771275649 -0800	commit: use init_pid_gains in main
