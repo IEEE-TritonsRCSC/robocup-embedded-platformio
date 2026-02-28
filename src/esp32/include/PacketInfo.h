@@ -16,16 +16,16 @@ class PacketInfo {
     bool isPacketAvailable();
     bool isLastPacketAvailable();
     void updateLastPacketSize();
-    void updatePacketSize(WiFiUDP udp);
+    void updatePacketSize(WiFiUDP &udp);
     void resetLastPacketSize();
     void updatePacketTime();
     void printLastPacketSize();
 
     // The network may have multiple UDP packets queue up in the buffer
     // Read all of them, but only process the last one to reduce jitter
-    void readAllPackets(WiFiUDP udp);
+    void readAllPackets(WiFiUDP &udp);
     void processLastPacket();
-    void updatePacketSizeAndReadAllPackets(WiFiUDP udp);
-    void updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP udp);
-    void updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP udp);
+    void updatePacketSizeAndReadAllPackets(WiFiUDP &udp);
+    void updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp);
+    void updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp);
 };

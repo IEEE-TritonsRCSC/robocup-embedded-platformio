@@ -25,11 +25,11 @@ void PacketInfo::printLastPacketSize() {
     PRINT((int)last_packet_size, " | ");
 }
 
-void PacketInfo::updatePacketSize(WiFiUDP udp) {
+void PacketInfo::updatePacketSize(WiFiUDP &udp) {
     packet_size = udp.parsePacket();
 }
 
-void PacketInfo::readAllPackets(WiFiUDP udp) {
+void PacketInfo::readAllPackets(WiFiUDP &udp) {
     while (isPacketAvailable())
     {
         udp.read(commsBuffer.packet_buffer, MAX_PACKET_SIZE);
@@ -60,17 +60,17 @@ void PacketInfo::resetLastPacketSize() {
     last_packet_size = 0;
 }
 
-void PacketInfo::updatePacketSizeAndReadAllPackets(WiFiUDP udp) {
+void PacketInfo::updatePacketSizeAndReadAllPackets(WiFiUDP &udp) {
     updatePacketSize(udp);
     readAllPackets(udp);
 }
 
-void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP udp) {
+void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp) {
     updatePacketSizeAndReadAllPackets(udp);
     processLastPacket();
 }
 
-void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP udp)
+void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp)
 {
     resetLastPacketSize();
     updatePacketSizeAndReadAllPackets(udp);
