@@ -9,6 +9,9 @@
 #define TX_PIN 17
 #define RX_PIN 16
 
+RobotVelocity robotVelocity;
+std::array<uint8_t, MOTOR_COMMAND_SIZE> motor_command;
+
 void setup() {
   Serial.begin(BAUD_RATE);
 
@@ -19,7 +22,7 @@ void setup() {
 
   robotSerial.begin(BAUD_RATE, SERIAL_8N1, RX_PIN, TX_PIN);
 
-  init_motor_command();
+  init_motor_command(motor_command);
 
   kicker_state.initializePinsAndChargeKicker();
 
@@ -27,7 +30,7 @@ void setup() {
 }
 
 void loop() {
-  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP, robotVelocity);
+  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP, robotVelocity, motor_command);
 
   kicker_state.checkAndUpdateKickerStatus();
 }

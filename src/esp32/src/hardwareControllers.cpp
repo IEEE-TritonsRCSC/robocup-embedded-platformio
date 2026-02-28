@@ -29,12 +29,12 @@ void initializeAndBlinkLED(int led, int count, int interval) {
     blink(led, count, interval);
 }
 
-void setDribbler(bool on)
+void setDribbler(bool on, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
 {
     motor_command[DRIBBLER_MOTOR_INDEX] = on ? DRIBBLER_ON : DRIBBLER_OFF;
 }
 
-void prepare_and_send_motor_command()
+void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
 {
     translateVelUandVelVIntoWheelVelocities(wheel_velocities, robotVelocity);
 
@@ -59,11 +59,11 @@ void prepare_and_send_motor_command()
         PRINT(speed, " ");
     }
 
-    sendMotorCommand();
+    sendMotorCommand(robotVelocity, motor_command);
 
     if (stop_dribbler_on_next_command)
     {
-        setDribbler(false);
+        setDribbler(false, motor_command);
         stop_dribbler_on_next_command = false;
     }
 
@@ -96,7 +96,7 @@ void waitUntilWiFiConnected(int waitInterval) {
     }
 }
 
-void init_motor_command()
+void init_motor_command(std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
 {
     for (int index = 0; index < MOTOR_COMMAND_SIZE; index++)
     {
@@ -111,7 +111,7 @@ void init_motor_command()
     }
 }
 
-void sendMotorCommand() {
+void sendMotorCommand(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command) {
     PRINT(static_cast<int>(motor_command[DRIBBLER_MOTOR_INDEX]), ") | ");
     PRINT("(", robotVelocity.vel_u, " ", robotVelocity.vel_v, " ", robotVelocity.vel_w, ")\n");
     robotSerial.write(motor_command.data(), motor_command.size());

@@ -12,14 +12,12 @@ extern WiFiUDP UDP;
 extern IPAddress multicastIP;
 
 extern std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers;
-extern std::array<uint8_t, MOTOR_COMMAND_SIZE> motor_command;
 
 extern PacketInfo packet_info;
 extern KickerState kicker_state;
 extern CommsBuffer commsBuffer;
 extern HardwareSerial robotSerial;
 extern MotionCommand current_cmd;
-extern RobotVelocity robotVelocity;
 
 extern bool stop_dribbler_on_next_command;
 

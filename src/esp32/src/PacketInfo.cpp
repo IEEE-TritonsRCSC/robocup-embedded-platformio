@@ -38,7 +38,7 @@ void PacketInfo::readAllPackets(WiFiUDP &udp) {
     }
 }
 
-void PacketInfo::processLastPacket(RobotVelocity &robotVelocity) {
+void PacketInfo::processLastPacket(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command) {
     if (isLastPacketAvailable())
     {
         turnLEDOn(LED_PIN);
@@ -49,7 +49,7 @@ void PacketInfo::processLastPacket(RobotVelocity &robotVelocity) {
         for (uint16_t i = 0; i < last_packet_size; i++)
         {
             char c = commsBuffer.packet_buffer[i];
-            handleNewChar(c, robotVelocity);
+            handleNewChar(c, robotVelocity, motor_command);
         }
 
         turnLEDOff(LED_PIN);
@@ -65,14 +65,14 @@ void PacketInfo::updatePacketSizeAndReadAllPackets(WiFiUDP &udp) {
     readAllPackets(udp);
 }
 
-void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity) {
+void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command) {
     updatePacketSizeAndReadAllPackets(udp);
-    processLastPacket(robotVelocity);
+    processLastPacket(robotVelocity, motor_command);
 }
 
-void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity)
+void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
 {
     resetLastPacketSize();
     updatePacketSizeAndReadAllPackets(udp);
-    processLastPacket(robotVelocity);
+    processLastPacket(robotVelocity, motor_command);
 }
