@@ -1,0 +1,32 @@
+{
+  "build": {
+    "core": "stm32",
+    "cpu": "cortex-m4",
+    "extra_flags": "-DSTM32F427xx",
+    "f_cpu": "180000000L",
+    "mcu": "stm32f427iihx",
+    "product_line": "STM32F427xx"
+  },
+  "connectivity": [
+    "can",
+    "spi",
+    "i2c",
+    "uart",
+    "usb"
+  ],
+  "debug": {
+    "default_tool": "stlink",
+    "openocd_target": "stm32f4x"
+  },
+  "frameworks": [
+    "stm32cube"
+  ],
+  "name": "Robomaster STM32F427II",
+  "upload": {
+    "maximum_ram_size": 262144,
+    "maximum_size": 2097152,
+    "protocol": "stlink"
+  },
+  "url": "",
+  "vendor": "Custom"
+}

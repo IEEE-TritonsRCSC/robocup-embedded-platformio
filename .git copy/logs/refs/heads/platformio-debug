@@ -1,0 +1,45 @@
+0000000000000000000000000000000000000000 91f4b319db635a0ecae6cc0bae66331308a7416b sukhjeetsekhon <sjtsekhon@gmail.com> 1772064068 -0800	branch: Created from HEAD
+91f4b319db635a0ecae6cc0bae66331308a7416b 2996589f8523396192ab7127813cb7e3074d6f4c sukhjeetsekhon <sjtsekhon@gmail.com> 1772064238 -0800	commit: delete robocup folder
+2996589f8523396192ab7127813cb7e3074d6f4c c9e7a10087bfa7be03002b8672373d01f70c7730 sukhjeetsekhon <sjtsekhon@gmail.com> 1772064566 -0800	commit: move robot consts from helpers.h to globals.h
+c9e7a10087bfa7be03002b8672373d01f70c7730 f5a94b3c5537007d04fafd2d57aacbf0e3949707 sukhjeetsekhon <sjtsekhon@gmail.com> 1772074769 -0800	commit: move global variables into globals.h
+f5a94b3c5537007d04fafd2d57aacbf0e3949707 7ca9e5f8f878bcadec3b4aec2ed45a39e5202776 sukhjeetsekhon <sjtsekhon@gmail.com> 1772075440 -0800	commit: move executors into executors.h
+7ca9e5f8f878bcadec3b4aec2ed45a39e5202776 b236746161689a5e62da11df100a88cf5bb0e487 sukhjeetsekhon <sjtsekhon@gmail.com> 1772076504 -0800	commit: move hardware functions into hardwareControllers.{h,cpp}
+b236746161689a5e62da11df100a88cf5bb0e487 3fd43f14d52dd59464cb2bf24c519e33fef67e91 sukhjeetsekhon <sjtsekhon@gmail.com> 1772077233 -0800	commit: move esp32 header files into include folder
+3fd43f14d52dd59464cb2bf24c519e33fef67e91 a9b9ceb91ebc52f2e3f40c14d6884ae0b15e896d sukhjeetsekhon <sjtsekhon@gmail.com> 1772077638 -0800	commit: remove duplicate extern variable declarations
+a9b9ceb91ebc52f2e3f40c14d6884ae0b15e896d b61b69a2dbd006fd5efecfd4016867d816db1bad sukhjeetsekhon <sjtsekhon@gmail.com> 1772078063 -0800	commit: rename size to numBytes
+b61b69a2dbd006fd5efecfd4016867d816db1bad a9b9ceb91ebc52f2e3f40c14d6884ae0b15e896d sukhjeetsekhon <sjtsekhon@gmail.com> 1772078173 -0800	reset: moving to HEAD~1
+a9b9ceb91ebc52f2e3f40c14d6884ae0b15e896d 8b4186c23552c240508beeddec7fc91d21955c78 sukhjeetsekhon <sjtsekhon@gmail.com> 1772078466 -0800	commit: ensure esp32 files are in include, src folders
+8b4186c23552c240508beeddec7fc91d21955c78 c32950fd4ef9f4572e7f0eb70814a9d152692a9c sukhjeetsekhon <sjtsekhon@gmail.com> 1772078640 -0800	commit: rename size to numBytes
+c32950fd4ef9f4572e7f0eb70814a9d152692a9c f6ea83ae1179a7c75a9f371181da6b35b7f757df sukhjeetsekhon <sjtsekhon@gmail.com> 1772078859 -0800	commit: rename n_read to chars_consumed
+f6ea83ae1179a7c75a9f371181da6b35b7f757df c32950fd4ef9f4572e7f0eb70814a9d152692a9c sukhjeetsekhon <sjtsekhon@gmail.com> 1772078896 -0800	reset: moving to HEAD~1
+c32950fd4ef9f4572e7f0eb70814a9d152692a9c 46ec4fdc9313f0afb8e7b3db490c3871f5fadcfb sukhjeetsekhon <sjtsekhon@gmail.com> 1772078961 -0800	commit: rename n_read to bytesParsed
+46ec4fdc9313f0afb8e7b3db490c3871f5fadcfb 12ed651665005005073946b1054b649c077d7963 sukhjeetsekhon <sjtsekhon@gmail.com> 1772079989 -0800	commit: add RobotVelocity class to manage robot velocities
+12ed651665005005073946b1054b649c077d7963 b699aa4c395582ee6970654c250122199520153f sukhjeetsekhon <sjtsekhon@gmail.com> 1772080124 -0800	commit: delete commented velocity variables from globals.{h,cpp}
+b699aa4c395582ee6970654c250122199520153f 5165221608c465d02d01247b9e6d40078292a31e sukhjeetsekhon <sjtsekhon@gmail.com> 1772080534 -0800	commit: add MotionCommand class to hold power,dir,angular_speed
+5165221608c465d02d01247b9e6d40078292a31e eb4901ae52e06ecd20fcfcbe8e2c2d6e80cfe2f9 sukhjeetsekhon <sjtsekhon@gmail.com> 1772080947 -0800	commit: add KickerState class
+eb4901ae52e06ecd20fcfcbe8e2c2d6e80cfe2f9 0438423cdd594bfc69b2935ce4490d12f902a10a sukhjeetsekhon <sjtsekhon@gmail.com> 1772081489 -0800	commit: add CommsBuffer class
+0438423cdd594bfc69b2935ce4490d12f902a10a 62d144a42c8059ef38c275fc9dd4287ed4329bac sukhjeetsekhon <sjtsekhon@gmail.com> 1772081814 -0800	commit: make trig values of front and back angles macros
+62d144a42c8059ef38c275fc9dd4287ed4329bac ffceecbb00b02714b9315fac34036821f613e2f2 sukhjeetsekhon <sjtsekhon@gmail.com> 1772081873 -0800	commit: delete commented hardWareController functions from robocup.cpp
+ffceecbb00b02714b9315fac34036821f613e2f2 a424ea305b3d0ff899bbc3039dd60ddd4323a568 sukhjeetsekhon <sjtsekhon@gmail.com> 1772082607 -0800	commit: add PacketInfo class
+a424ea305b3d0ff899bbc3039dd60ddd4323a568 5cdda066065d10efc717626a5f74b0e1b0bbd781 sukhjeetsekhon <sjtsekhon@gmail.com> 1772082622 -0800	commit: git add robocup.cpp for add PacketInfo class commit
+5cdda066065d10efc717626a5f74b0e1b0bbd781 6da3eac49dbca5dac3f2de13366e0804efc0691d sukhjeetsekhon <sjtsekhon@gmail.com> 1772136791 -0800	commit: add baud_rate to platformio.ini for serial monitor
+6da3eac49dbca5dac3f2de13366e0804efc0691d 2244c118f3f0f9a4708557d4aa36ad3f6c38157e sukhjeetsekhon <sjtsekhon@gmail.com> 1772137306 -0800	commit: organize globals.cpp visually
+2244c118f3f0f9a4708557d4aa36ad3f6c38157e bee5a8b1cf6a970c101cedccd72bd38675347a62 sukhjeetsekhon <sjtsekhon@gmail.com> 1772138137 -0800	commit: move consts out of robocup.cpp and into helpers.h
+bee5a8b1cf6a970c101cedccd72bd38675347a62 ac7de4e3cd48c26263ac0d00da32ed2fa8d4e4b0 sukhjeetsekhon <sjtsekhon@gmail.com> 1772140397 -0800	commit: add sendMotorCommand in hardwareControllers
+ac7de4e3cd48c26263ac0d00da32ed2fa8d4e4b0 3dfbdedefc8bca59f681444fb475325c500a73be sukhjeetsekhon <sjtsekhon@gmail.com> 1772141645 -0800	commit: add translateVelUandVelVIntoWheelVelocities in hardwareControllers
+3dfbdedefc8bca59f681444fb475325c500a73be fdfae524aa0f7dd559a48e4215ddfca0ba7c97be sukhjeetsekhon <sjtsekhon@gmail.com> 1772142739 -0800	commit: add decayVelUandVelV in hardwareControllers
+fdfae524aa0f7dd559a48e4215ddfca0ba7c97be 9fe9cbcaf0fb2947e1ef9c1254e65cf05b75c8ff sukhjeetsekhon <sjtsekhon@gmail.com> 1772143854 -0800	commit: add translateWheelVelocitiesIntoAngular to hardwareControllers
+9fe9cbcaf0fb2947e1ef9c1254e65cf05b75c8ff cf16a368fb8a1055c8e3c0da013f276112c9f2d5 sukhjeetsekhon <sjtsekhon@gmail.com> 1772145164 -0800	commit: refactor connect_wifi
+cf16a368fb8a1055c8e3c0da013f276112c9f2d5 7ab0f1841d9f3cb6401da80881c509a151f8e7ee sukhjeetsekhon <sjtsekhon@gmail.com> 1772145339 -0800	commit: rename waitWhileWiFiConnecting to waitUntilWiFiConnected
+7ab0f1841d9f3cb6401da80881c509a151f8e7ee 4e3ac8804901de0d18501c61e1c18f4166ff2ed8 sukhjeetsekhon <sjtsekhon@gmail.com> 1772161630 -0800	commit: move global consts from helpers.h to globals.h
+4e3ac8804901de0d18501c61e1c18f4166ff2ed8 e7f51ba0b64a11a6b667c967d9d8d6a1c07f75f3 sukhjeetsekhon <sjtsekhon@gmail.com> 1772163054 -0800	commit: remove unnecessary include helpers.h from esp32 files
+e7f51ba0b64a11a6b667c967d9d8d6a1c07f75f3 4eb2285f5077aa57d83ba44b9bb252fffac6c914 sukhjeetsekhon <sjtsekhon@gmail.com> 1772171898 -0800	commit: refactor KickerState
+4eb2285f5077aa57d83ba44b9bb252fffac6c914 9ac05f576022e8c3613a3ba34c0c42ac26d78127 sukhjeetsekhon <sjtsekhon@gmail.com> 1772172156 -0800	commit: replace magic numbers in globals.h with consts
+9ac05f576022e8c3613a3ba34c0c42ac26d78127 9c24654c62e55aeb21962779e41edfa5da3ac5e5 sukhjeetsekhon <sjtsekhon@gmail.com> 1772172469 -0800	commit: replace initializeAndBlinkLED args with consts
+9c24654c62e55aeb21962779e41edfa5da3ac5e5 7981084f21155564d35a2221d241a9bec273aaca sukhjeetsekhon <sjtsekhon@gmail.com> 1772172710 -0800	commit: add last_packet_size to PacketInfo
+7981084f21155564d35a2221d241a9bec273aaca 0781aa518bc6b931be0bc6973c5557758efa04a2 sukhjeetsekhon <sjtsekhon@gmail.com> 1772174066 -0800	commit: refactor PacketInfo
+0781aa518bc6b931be0bc6973c5557758efa04a2 4083a2aa68cbbb6aff413caa1bc8673dfc47dad5 sukhjeetsekhon <sjtsekhon@gmail.com> 1772174162 -0800	commit: add MAX_PACKET_SIZE const in robocup.cpp
+4083a2aa68cbbb6aff413caa1bc8673dfc47dad5 b30f4224dd549d017e19f81c7314ca7fc56af988 sukhjeetsekhon <sjtsekhon@gmail.com> 1772174225 -0800	commit: fix missing declaration of turnLEDOff and On functions in hardwareControllers.h
+b30f4224dd549d017e19f81c7314ca7fc56af988 b012feb736c660b15bb694cc083fa56d1934c182 sukhjeetsekhon <sjtsekhon@gmail.com> 1772225008 -0800	reset: moving to b012feb
+b012feb736c660b15bb694cc083fa56d1934c182 4728192ad7b5d8c18da1e908e1f6e2e68fabf0fc sukhjeetsekhon <sjtsekhon@gmail.com> 1772239912 -0800	commit (merge): Merge branch 'platformio-dev' into platformio-debug
+4728192ad7b5d8c18da1e908e1f6e2e68fabf0fc 7e5867aa94b65e3b2a490168b7759e8c8404c981 sukhjeetsekhon <sjtsekhon@gmail.com> 1772245559 -0800	commit: add missing updatePacketSize function to PacketInfo.cpp

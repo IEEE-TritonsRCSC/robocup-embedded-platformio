@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 545a4886a2142c84cd515f56f9be118e0b49a5d3 sukhjeetsekhon <sjtsekhon@gmail.com> 1772059234 -0800	branch: Created from HEAD
+545a4886a2142c84cd515f56f9be118e0b49a5d3 199ce9c0fd1cd82f34167a30069ce6d8dd2d7e51 sukhjeetsekhon <sjtsekhon@gmail.com> 1772059307 -0800	commit: fix: correct logic in isDoneCharging and update motor command size usage

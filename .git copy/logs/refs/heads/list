@@ -1,0 +1,66 @@
+0000000000000000000000000000000000000000 4c5032572efe92842c924d92223b2b161877cb6f sukhjeetsekhon <sjtsekhon@gmail.com> 1769291836 -0800	branch: Created from refs/remotes/origin/list
+4c5032572efe92842c924d92223b2b161877cb6f 8c191652d2b137a0e3cd129d0eb42ab057b34b1a sukhjeetsekhon <sjtsekhon@gmail.com> 1769898982 -0800	pull: Fast-forward
+8c191652d2b137a0e3cd129d0eb42ab057b34b1a ad0dd5e414a72ce20f5158b881f81eac592f2823 sukhjeetsekhon <sjtsekhon@gmail.com> 1771710889 -0800	pull: Fast-forward
+ad0dd5e414a72ce20f5158b881f81eac592f2823 0568e1dffbb73b04a48ee8a7a67e4f0c7d5d1044 sukhjeetsekhon <sjtsekhon@gmail.com> 1771715529 -0800	commit: add new C++ drivetrain code
+0568e1dffbb73b04a48ee8a7a67e4f0c7d5d1044 0a2c6ada7c12476f9c40a3c1bf1c6cc879abebc2 sukhjeetsekhon <sjtsekhon@gmail.com> 1771717046 -0800	commit: delete old drivetrain folder
+0a2c6ada7c12476f9c40a3c1bf1c6cc879abebc2 4be216d811d5d53e0b062c805526023ad26c31f6 sukhjeetsekhon <sjtsekhon@gmail.com> 1771719556 -0800	commit: working C++ version of STM32 codebase
+4be216d811d5d53e0b062c805526023ad26c31f6 cc611fd4e6beb9ebb4586e0f8fb88811a4f0ab32 sukhjeetsekhon <sjtsekhon@gmail.com> 1771719942 -0800	commit: delete empty folders and AI-testing files
+cc611fd4e6beb9ebb4586e0f8fb88811a4f0ab32 6537187eecc04dc50d7d67399bd66ea7c7225ffa sukhjeetsekhon <sjtsekhon@gmail.com> 1771720848 -0800	commit: add basic command tester
+6537187eecc04dc50d7d67399bd66ea7c7225ffa 873a04d102029ed76c759ca7c58fc49f6460de45 sukhjeetsekhon <sjtsekhon@gmail.com> 1771733669 -0800	commit: refactor PID objects
+873a04d102029ed76c759ca7c58fc49f6460de45 0cde7e0327e473e25f198c023eb4f5cd02ced008 sukhjeetsekhon <sjtsekhon@gmail.com> 1771733959 -0800	commit (amend): refactor PID objects
+0cde7e0327e473e25f198c023eb4f5cd02ced008 45fa607388a739e8e6ef62a30087e7c0bf6d8123 sukhjeetsekhon <sjtsekhon@gmail.com> 1771742743 -0800	commit: refactor HAL_GPIO_TogglePin into for loop
+45fa607388a739e8e6ef62a30087e7c0bf6d8123 d1bd480150cf8abd1e0b94d6874f3ac51c8188c0 sukhjeetsekhon <sjtsekhon@gmail.com> 1771744316 -0800	commit: refactor CanTxHeaders into a class
+d1bd480150cf8abd1e0b94d6874f3ac51c8188c0 b9b27e40f7f1c86b7561a7dbddd9852f1298d956 sukhjeetsekhon <sjtsekhon@gmail.com> 1771744466 -0800	commit: delete old PID files
+b9b27e40f7f1c86b7561a7dbddd9852f1298d956 01b63785e80d2eeea33053817e424f19da75aee9 sukhjeetsekhon <sjtsekhon@gmail.com> 1771744551 -0800	commit: remove speed_data and targetSpeeds set-to-zero for loops
+01b63785e80d2eeea33053817e424f19da75aee9 10a7d85233dffc9e8cbcc803bce88353a9fc53e4 sukhjeetsekhon <sjtsekhon@gmail.com> 1771745621 -0800	commit: refactor main logic into helper functions
+10a7d85233dffc9e8cbcc803bce88353a9fc53e4 ed620130c7febbf4cb130b0e1c9d4dbb75a5c909 sukhjeetsekhon <sjtsekhon@gmail.com> 1771745719 -0800	commit: mend
+ed620130c7febbf4cb130b0e1c9d4dbb75a5c909 10a7d85233dffc9e8cbcc803bce88353a9fc53e4 sukhjeetsekhon <sjtsekhon@gmail.com> 1771745792 -0800	reset: moving to HEAD~1
+10a7d85233dffc9e8cbcc803bce88353a9fc53e4 01b63785e80d2eeea33053817e424f19da75aee9 sukhjeetsekhon <sjtsekhon@gmail.com> 1771745820 -0800	reset: moving to HEAD~1
+01b63785e80d2eeea33053817e424f19da75aee9 adccec12489e6461d4aa322d641790b8132d93a1 sukhjeetsekhon <sjtsekhon@gmail.com> 1771746110 -0800	commit: refactor main logic into helper functions
+adccec12489e6461d4aa322d641790b8132d93a1 fd3afa051727be26e7b9f9451d135f14872f344d sukhjeetsekhon <sjtsekhon@gmail.com> 1771746170 -0800	commit: update linker
+fd3afa051727be26e7b9f9451d135f14872f344d 25dbd2ab9414b43b529166c0fc7be8c85232103d sukhjeetsekhon <sjtsekhon@gmail.com> 1771746593 -0800	commit: refactor motor setup into helper function
+25dbd2ab9414b43b529166c0fc7be8c85232103d 4c41efda21d03ca275a12c9117096176048b66ef sukhjeetsekhon <sjtsekhon@gmail.com> 1771747301 -0800	commit: update helper params to volatile float*
+4c41efda21d03ca275a12c9117096176048b66ef 3a399d2f8acf66491aa79e1386e76234d1635770 sukhjeetsekhon <sjtsekhon@gmail.com> 1771747394 -0800	commit: add HAL_DELAY const of 10 ms
+3a399d2f8acf66491aa79e1386e76234d1635770 d8539b528ef94f6633e3a6d4aa20763f39a9799a sukhjeetsekhon <sjtsekhon@gmail.com> 1771747715 -0800	commit: add PID_Data consts for maxOutput, integralLimit, and deadBand
+d8539b528ef94f6633e3a6d4aa20763f39a9799a 375b7ad79b10b73d573c2d96ce72183b4b838ecd sukhjeetsekhon <sjtsekhon@gmail.com> 1771747950 -0800	commit: add NUM_WHEELS and NUM_MOTORS consts
+375b7ad79b10b73d573c2d96ce72183b4b838ecd d7a2be05969344409c30336b3872f83f335357c3 sukhjeetsekhon <sjtsekhon@gmail.com> 1771748835 -0800	commit: refactor pidCalculate logic into smaller methods
+d7a2be05969344409c30336b3872f83f335357c3 6a691f4f3558596059c0cd03887d0c8d912b2083 sukhjeetsekhon <sjtsekhon@gmail.com> 1771748990 -0800	commit: delete old PID files
+6a691f4f3558596059c0cd03887d0c8d912b2083 cdc98ae20acc6972e84eadd8a59418ce5747ede5 sukhjeetsekhon <sjtsekhon@gmail.com> 1771749249 -0800	commit: further refactor to pidCalculate into 2 steps
+cdc98ae20acc6972e84eadd8a59418ce5747ede5 e2f0cb499f1fb9ce5ff68d44e8a0c5724a1ec377 sukhjeetsekhon <sjtsekhon@gmail.com> 1771749368 -0800	commit: add turnLEDsOff helper
+e2f0cb499f1fb9ce5ff68d44e8a0c5724a1ec377 7950186cf1532a31bf63671b63c229b1b56cd93a sukhjeetsekhon <sjtsekhon@gmail.com> 1771749812 -0800	commit: add FRAME_LENGTH const, replaces 8 for readability
+7950186cf1532a31bf63671b63c229b1b56cd93a 7a33732494f9c540097593230a89b90c06d9c98e sukhjeetsekhon <sjtsekhon@gmail.com> 1771750253 -0800	commit: add cantxheader stdid consts for readability
+7a33732494f9c540097593230a89b90c06d9c98e 1367bbe613b486f56862811eda9141614a50bfdd sukhjeetsekhon <sjtsekhon@gmail.com> 1771751350 -0800	commit: refactor: wrap drivetrain state in struct and route callbacks through helpers
+1367bbe613b486f56862811eda9141614a50bfdd c675d7dd344406f79e74c6b9f09975e1006cef6a sukhjeetsekhon <sjtsekhon@gmail.com> 1771883832 -0800	commit: move robocup.ino into robocup folder
+c675d7dd344406f79e74c6b9f09975e1006cef6a 9f6a3362b5d45584acec4dad2b20b10137f037cd sukhjeetsekhon <sjtsekhon@gmail.com> 1771886645 -0800	commit: Fix UDP command port and add packet-receive LED pulse
+9f6a3362b5d45584acec4dad2b20b10137f037cd 30b55bb8655c490d1ff65a199feac1269d8d766f sukhjeetsekhon <sjtsekhon@gmail.com> 1771886990 -0800	commit: Comment safety timeout in main.cpp for testing
+30b55bb8655c490d1ff65a199feac1269d8d766f b4977812dbafe84f57d71b5d404c2fbb0a0e18b8 sukhjeetsekhon <sjtsekhon@gmail.com> 1771887192 -0800	commit: Add stop command to tester.py
+b4977812dbafe84f57d71b5d404c2fbb0a0e18b8 5fa6b5d9e0a18d9a2377fcfc5360621f4aea7ff8 sukhjeetsekhon <sjtsekhon@gmail.com> 1771891675 -0800	commit: delete old commands_tester.py
+5fa6b5d9e0a18d9a2377fcfc5360621f4aea7ff8 30dd936ca619fec9779b69854ed15191288f5a0a sukhjeetsekhon <sjtsekhon@gmail.com> 1771896363 -0800	commit: refactor MX_GPIO_Init into functional style
+30dd936ca619fec9779b69854ed15191288f5a0a 4619d5a5298bda073c643ae652ffa72b2a7cd1c0 sukhjeetsekhon <sjtsekhon@gmail.com> 1771896625 -0800	commit: Add function comments in gpio.h
+4619d5a5298bda073c643ae652ffa72b2a7cd1c0 cfe253b2ff6e5b5f0c1667e5b4327b0b9c5a670d sukhjeetsekhon <sjtsekhon@gmail.com> 1771896882 -0800	commit: Add function comments in helpers.h
+cfe253b2ff6e5b5f0c1667e5b4327b0b9c5a670d 6bda58197eec8999db737c0e5b1d05bdf24703bc sukhjeetsekhon <sjtsekhon@gmail.com> 1771897295 -0800	commit: add PID_Gains array constructor
+6bda58197eec8999db737c0e5b1d05bdf24703bc 1633d3e491fe1cba6bfc61b8a06f165002d529f8 sukhjeetsekhon <sjtsekhon@gmail.com> 1771899060 -0800	commit: refactor setMotorSpeeds function in helpers.cpp
+1633d3e491fe1cba6bfc61b8a06f165002d529f8 6affeb0696b2d0abec2e845a71fa85b449362de6 sukhjeetsekhon <sjtsekhon@gmail.com> 1771901853 -0800	commit: remove extern C from SystemClock_Config HAL_TIM_PeriodElapsedCallback and Error_Handler
+6affeb0696b2d0abec2e845a71fa85b449362de6 442e04437ca88724768908f64c926c7b7008a557 sukhjeetsekhon <sjtsekhon@gmail.com> 1771902867 -0800	commit: delete old setMotorSpeeds from main.h
+442e04437ca88724768908f64c926c7b7008a557 bab1133a27900b9c492e2f5259e7287761188d12 sukhjeetsekhon <sjtsekhon@gmail.com> 1771903158 -0800	commit: write function comments in helpers.h
+bab1133a27900b9c492e2f5259e7287761188d12 3e1de3b497ae92c8f61b4172c68b33a5dcf62a29 sukhjeetsekhon <sjtsekhon@gmail.com> 1771903818 -0800	commit: delete deprecated runMotors function in main.h
+3e1de3b497ae92c8f61b4172c68b33a5dcf62a29 5e4e3621b29adfe867cb92cf12b52d4fb2ef2b4c sukhjeetsekhon <sjtsekhon@gmail.com> 1771904219 -0800	commit: remove autogen comments in main.cpp
+5e4e3621b29adfe867cb92cf12b52d4fb2ef2b4c 5e9616f60e65d9873b7624976b845e83bd0835e3 sukhjeetsekhon <sjtsekhon@gmail.com> 1771904534 -0800	commit: add initializePeripherals function to helpers
+5e9616f60e65d9873b7624976b845e83bd0835e3 f03b033bd1ab56d29d3dfa745908b5e192f3f0e0 sukhjeetsekhon <sjtsekhon@gmail.com> 1771904808 -0800	commit: refactor HAL_CAN_RxFifo0MsgPendingCallback, HAL_UART_RxCpltCallback
+f03b033bd1ab56d29d3dfa745908b5e192f3f0e0 213c5d079bd8f9c5606e24fd716308b7a42814ea sukhjeetsekhon <sjtsekhon@gmail.com> 1771905195 -0800	commit: revise function comments in helpers.h
+213c5d079bd8f9c5606e24fd716308b7a42814ea 451cca2ac9c3c561e1b7438626ac557232acf5ff sukhjeetsekhon <sjtsekhon@gmail.com> 1771905574 -0800	commit: add initializeSpeedCommands helper in main.cpp
+451cca2ac9c3c561e1b7438626ac557232acf5ff 148e9ce0cd471ce478913b33b43af6daec774ee4 sukhjeetsekhon <sjtsekhon@gmail.com> 1771905814 -0800	commit: add initializeSpeedCommandsAndSetMotors helper to main.cpp
+148e9ce0cd471ce478913b33b43af6daec774ee4 ea293949023cfdc5df4622730bdc09e60f2bb5cd sukhjeetsekhon <sjtsekhon@gmail.com> 1771906024 -0800	commit: add initializeSpeedCommandsAndSetMotorsAndIncrementTimeout helper in main.cpp
+ea293949023cfdc5df4622730bdc09e60f2bb5cd 29b0905bd29be656a1bc7b922ce76a5c193ac502 sukhjeetsekhon <sjtsekhon@gmail.com> 1771906302 -0800	commit: add initSpeedCommandsSetMotorsIncrementTimeoutAndDelay helper to main.cpp
+29b0905bd29be656a1bc7b922ce76a5c193ac502 4dbaf8ca7cc8cf6f45b1b88c9667522d324cb099 sukhjeetsekhon <sjtsekhon@gmail.com> 1771906820 -0800	commit: rename helpers to:
+4dbaf8ca7cc8cf6f45b1b88c9667522d324cb099 91aa1af20ace86dd5d8ebd4d7de59a9a136cd3b5 sukhjeetsekhon <sjtsekhon@gmail.com> 1771907123 -0800	commit: refactor updateMotorPidLoop with DrivetrainState param
+91aa1af20ace86dd5d8ebd4d7de59a9a136cd3b5 e30d98727c0298d245dc4205603ba13d795a1b80 sukhjeetsekhon <sjtsekhon@gmail.com> 1771907312 -0800	commit: refactor updateDribblerSpeedFromFlag with DrivetrainState param
+e30d98727c0298d245dc4205603ba13d795a1b80 e4b177befc70b2a2fadf2ad0abe7901bc924920d sukhjeetsekhon <sjtsekhon@gmail.com> 1771907437 -0800	commit: refactor applySafetyTimeoutToTargetSpeeds with DrivetrainState param
+e4b177befc70b2a2fadf2ad0abe7901bc924920d 385ffb2c95d412e53a60fc0d96bf84ddbb0bfd83 sukhjeetsekhon <sjtsekhon@gmail.com> 1771918583 -0800	commit: deleted sysmem.cpp
+385ffb2c95d412e53a60fc0d96bf84ddbb0bfd83 f1e6e3f252a2dc76a6830dd0efc493a31a4b008f sukhjeetsekhon <sjtsekhon@gmail.com> 1771918893 -0800	commit: update CMakeLists.txt
+f1e6e3f252a2dc76a6830dd0efc493a31a4b008f 4aea576546f80e6216dc7c3639ece36a4f33f761 sukhjeetsekhon <sjtsekhon@gmail.com> 1771919000 -0800	commit: deleted stm32f4xx_hal_timebase_tim.cpp
+4aea576546f80e6216dc7c3639ece36a4f33f761 fe3db3f67284c0c2bafcca702cca2d02954c5e8f sukhjeetsekhon <sjtsekhon@gmail.com> 1771919147 -0800	commit: deleted stm32f4xx_hal_msp.cpp
+fe3db3f67284c0c2bafcca702cca2d02954c5e8f 5d8af04b40e9d0913ef006fbe9bea355e5a271d1 sukhjeetsekhon <sjtsekhon@gmail.com> 1771919384 -0800	commit: deleted stm32f4xx_it.h
+5d8af04b40e9d0913ef006fbe9bea355e5a271d1 a44814cb2ab4cb24882ef6c10e11b31c33436087 sukhjeetsekhon <sjtsekhon@gmail.com> 1771919489 -0800	commit: deleted unused movement functions in main.h
+a44814cb2ab4cb24882ef6c10e11b31c33436087 d52679d661ad59af440a15be9df678f2de748fb2 sukhjeetsekhon <sjtsekhon@gmail.com> 1771920778 -0800	commit: deleted main.h
+d52679d661ad59af440a15be9df678f2de748fb2 f811af297c0940a31e305e757957fae7e83fe570 sukhjeetsekhon <sjtsekhon@gmail.com> 1771952709 -0800	commit: refactor setMotorSpeeds in helpers.cpp
