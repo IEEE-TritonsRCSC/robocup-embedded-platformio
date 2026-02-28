@@ -11,8 +11,6 @@
 extern WiFiUDP UDP;
 extern IPAddress multicastIP;
 
-extern std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers;
-
 extern PacketInfo packet_info;
 extern KickerState kicker_state;
 extern CommsBuffer commsBuffer;

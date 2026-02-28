@@ -96,7 +96,7 @@ void waitUntilWiFiConnected(int waitInterval) {
     }
 }
 
-void init_motor_command(std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
+void init_motor_command(std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers)
 {
     for (int index = 0; index < MOTOR_COMMAND_SIZE; index++)
     {

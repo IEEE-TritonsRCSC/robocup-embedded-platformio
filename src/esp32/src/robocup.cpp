@@ -11,6 +11,7 @@
 
 RobotVelocity robotVelocity;
 std::array<uint8_t, MOTOR_COMMAND_SIZE> motor_command;
+std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers = {0xCA, 0xFE};
 
 void setup() {
   Serial.begin(BAUD_RATE);
@@ -22,7 +23,7 @@ void setup() {
 
   robotSerial.begin(BAUD_RATE, SERIAL_8N1, RX_PIN, TX_PIN);
 
-  init_motor_command(motor_command);
+  init_motor_command(motor_command, motor_cmd_headers);
 
   kicker_state.initializePinsAndChargeKicker();
 
