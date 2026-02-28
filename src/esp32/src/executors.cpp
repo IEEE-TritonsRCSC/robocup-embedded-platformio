@@ -3,7 +3,7 @@
 #include "global_vars.h"
 #include "hardwareControllers.h"
 
-void execute_stop()
+void execute_stop(RobotVelocity &robotVelocity)
 {
     PRINT("Stopping | ");
     robotVelocity.vel_u = 0.0f;

@@ -36,7 +36,7 @@ void setDribbler(bool on)
 
 void prepare_and_send_motor_command()
 {
-    translateVelUandVelVIntoWheelVelocities(wheel_velocities, &robotVelocity);
+    translateVelUandVelVIntoWheelVelocities(wheel_velocities, robotVelocity);
 
     PRINT("(");
     for (int wheel_i = 0; wheel_i < NUM_WHEELS; wheel_i++) {
@@ -117,11 +117,11 @@ void sendMotorCommand() {
     robotSerial.write(motor_command.data(), motor_command.size());
 }
 
-void translateVelUandVelVIntoWheelVelocities(float wheel_velocities[4], RobotVelocity* robotVelocity) {
-    wheel_velocities[0] = (robotVelocity->vel_u * -sinFront) + (robotVelocity->vel_v * -cosFront); // front-right
-    wheel_velocities[1] = (robotVelocity->vel_u * sinBack) + (robotVelocity->vel_v * -cosBack);    // back-right
-    wheel_velocities[2] = (robotVelocity->vel_u * sinBack) + (robotVelocity->vel_v * cosBack);     // back-left
-    wheel_velocities[3] = (robotVelocity->vel_u * -sinFront) + (robotVelocity->vel_v * cosFront);  // front-left
+void translateVelUandVelVIntoWheelVelocities(float wheel_velocities[4], RobotVelocity& robotVelocity) {
+    wheel_velocities[0] = (robotVelocity.vel_u * -sinFront) + (robotVelocity.vel_v * -cosFront); // front-right
+    wheel_velocities[1] = (robotVelocity.vel_u * sinBack) + (robotVelocity.vel_v * -cosBack);    // back-right
+    wheel_velocities[2] = (robotVelocity.vel_u * sinBack) + (robotVelocity.vel_v * cosBack);     // back-left
+    wheel_velocities[3] = (robotVelocity.vel_u * -sinFront) + (robotVelocity.vel_v * cosFront);  // front-left
 }
 
 void decayVelUandVelV(RobotVelocity &robotVelocity) {

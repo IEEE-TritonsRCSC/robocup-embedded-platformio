@@ -38,7 +38,7 @@ void PacketInfo::readAllPackets(WiFiUDP &udp) {
     }
 }
 
-void PacketInfo::processLastPacket() {
+void PacketInfo::processLastPacket(RobotVelocity &robotVelocity) {
     if (isLastPacketAvailable())
     {
         turnLEDOn(LED_PIN);
@@ -49,7 +49,7 @@ void PacketInfo::processLastPacket() {
         for (uint16_t i = 0; i < last_packet_size; i++)
         {
             char c = commsBuffer.packet_buffer[i];
-            handleNewChar(c);
+            handleNewChar(c, robotVelocity);
         }
 
         turnLEDOff(LED_PIN);
@@ -65,14 +65,14 @@ void PacketInfo::updatePacketSizeAndReadAllPackets(WiFiUDP &udp) {
     readAllPackets(udp);
 }
 
-void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp) {
+void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity) {
     updatePacketSizeAndReadAllPackets(udp);
-    processLastPacket();
+    processLastPacket(robotVelocity);
 }
 
-void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp)
+void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity)
 {
     resetLastPacketSize();
     updatePacketSizeAndReadAllPackets(udp);
-    processLastPacket();
+    processLastPacket(robotVelocity);
 }

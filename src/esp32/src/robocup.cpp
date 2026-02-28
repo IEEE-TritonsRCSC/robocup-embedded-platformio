@@ -27,7 +27,7 @@ void setup() {
 }
 
 void loop() {
-  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP);
+  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP, robotVelocity);
 
   kicker_state.checkAndUpdateKickerStatus();
 }

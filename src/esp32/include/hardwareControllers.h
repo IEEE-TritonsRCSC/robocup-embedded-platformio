@@ -31,7 +31,7 @@ void prepare_and_send_motor_command();
 void connect_wifi();
 void init_motor_command();
 void sendMotorCommand();
-void translateVelUandVelVIntoWheelVelocities(float wheel_velocities[4], RobotVelocity *robotVelocity);
+void translateVelUandVelVIntoWheelVelocities(float wheel_velocities[4], RobotVelocity &robotVelocity);
 void decayVelUandVelV(RobotVelocity &robotVelocity);
 void translateWheelVelocitiesIntoAngular(float wheel_velocities[4], int wheelIndex);
 void addAngularVelocitiesToWheelVelocities(float wheel_velocities[4], RobotVelocity &robotVelocity, int wheelIndex);

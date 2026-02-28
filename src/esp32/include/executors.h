@@ -1,6 +1,8 @@
 #pragma once
 
-void execute_stop();
+#include "RobotVelocity.h"
+
+void execute_stop(RobotVelocity &robotVelocity);
 void execute_turn(float angular_speed);
 void execute_dash(float power, float dir);
 void execute_skick(float power);

@@ -3,7 +3,7 @@
 #include "executors.h"
 #include "hardwareControllers.h"
 
-void handleNewChar(char c)
+void handleNewChar(char c, RobotVelocity &robotVelocity)
 {
     // Each line or "string" received is a message
     if (c == '\n' || c == '\0')
@@ -11,7 +11,7 @@ void handleNewChar(char c)
         commsBuffer.buffer[packet_info.numBytes] = '\0'; // null terminate the string
         if (packet_info.numBytes)
         {                     // if buffer not empty
-            parseMsg(commsBuffer.buffer); // process the message
+            parseMsg(commsBuffer.buffer, robotVelocity); // process the message
             commsBuffer.buffer[0] = '\0'; // reset buffer
             packet_info.numBytes = 0;         // reset numBytes
         }
@@ -21,16 +21,16 @@ void handleNewChar(char c)
         commsBuffer.buffer[packet_info.numBytes] = c; // add char to buffer
         if (++packet_info.numBytes == MAX_BUFFER_SIZE - 1)
         {                        // prevent overflow
-            handleNewChar('\0'); // force terminate the string
+            handleNewChar('\0', robotVelocity); // force terminate the string
         }
     }
 }
 
-void parseMsg(char *msg)
+void parseMsg(char *msg, RobotVelocity &robotVelocity)
 {
     if (strcmp(msg, "stop") == 0)
     {
-        execute_stop();
+        execute_stop(robotVelocity);
     }
     else if (sscanf(msg, RELEVANT_FORMAT, &commsBuffer.cmd_buffer, &packet_info.bytesParsed) == 1)
     {
