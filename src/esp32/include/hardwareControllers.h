@@ -29,7 +29,7 @@
 void blink(int led, int count, int interval);
 void initializeAndBlinkLED(int led, int count, int interval);
 void setDribbler(bool on, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command);
-void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial);
+void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command);
 void connect_wifi();
 void init_motor_command(std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers);
 void sendMotorCommand(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial);

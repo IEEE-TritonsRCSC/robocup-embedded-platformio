@@ -3,14 +3,14 @@
 #include "global_vars.h"
 #include "hardwareControllers.h"
 
-void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial)
+void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command)
 {
     PRINT("Stopping | ");
     robotVelocity.vel_u = 0.0f;
     robotVelocity.vel_v = 0.0f;
     robotVelocity.vel_w = 0.0f;
     setDribbler(false,motor_command);
-    prepare_and_send_motor_command(robotVelocity, motor_command, robotSerial);
+    prepare_and_send_motor_command(robotVelocity, motor_command, robotSerial, stop_dribbler_on_next_command);
 }
 
 void execute_turn(float angular_speed, RobotVelocity &robotVelocity)
@@ -28,7 +28,7 @@ void execute_dash(float power, float dir, RobotVelocity &robotVelocity)
     robotVelocity.vel_w = 0.0f;
 }
 
-void execute_skick(float power, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
+void execute_skick(float power, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, bool &stop_dribbler_on_next_command)
 {
     PRINT("Short Kicking the ball with ", power, " power | ");
     bool dribbler_on = (power > 0.0f);

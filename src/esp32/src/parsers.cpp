@@ -3,7 +3,7 @@
 #include "executors.h"
 #include "hardwareControllers.h"
 
-void handleNewChar(char c, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial)
+void handleNewChar(char c, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command)
 {
     // Each line or "string" received is a message
     if (c == '\n' || c == '\0')
@@ -11,7 +11,7 @@ void handleNewChar(char c, RobotVelocity &robotVelocity, std::array<uint8_t, MOT
         commsBuffer.buffer[packet_info.numBytes] = '\0'; // null terminate the string
         if (packet_info.numBytes)
         {                     // if buffer not empty
-            parseMsg(commsBuffer.buffer, robotVelocity, motor_command, kicker_state, robotSerial); // process the message
+            parseMsg(commsBuffer.buffer, robotVelocity, motor_command, kicker_state, robotSerial, stop_dribbler_on_next_command); // process the message
             commsBuffer.buffer[0] = '\0'; // reset buffer
             packet_info.numBytes = 0;         // reset numBytes
         }
@@ -21,26 +21,26 @@ void handleNewChar(char c, RobotVelocity &robotVelocity, std::array<uint8_t, MOT
         commsBuffer.buffer[packet_info.numBytes] = c; // add char to buffer
         if (++packet_info.numBytes == MAX_BUFFER_SIZE - 1)
         {                        // prevent overflow
-            handleNewChar('\0', robotVelocity, motor_command, kicker_state, robotSerial); // force terminate the string
+            handleNewChar('\0', robotVelocity, motor_command, kicker_state, robotSerial, stop_dribbler_on_next_command); // force terminate the string
         }
     }
 }
 
-void parseMsg(char *msg, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial)
+void parseMsg(char *msg, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command)
 {
     if (strcmp(msg, "stop") == 0)
     {
-        execute_stop(robotVelocity, motor_command, robotSerial);
+        execute_stop(robotVelocity, motor_command, robotSerial, stop_dribbler_on_next_command);
     }
     else if (sscanf(msg, RELEVANT_FORMAT, &commsBuffer.cmd_buffer, &packet_info.bytesParsed) == 1)
     {
         msg += packet_info.bytesParsed;
-        parseCommand(commsBuffer.cmd_buffer, msg, robotVelocity, motor_command, kicker_state, robotSerial);
+        parseCommand(commsBuffer.cmd_buffer, msg, robotVelocity, motor_command, kicker_state, robotSerial,stop_dribbler_on_next_command);
     }
     commsBuffer.cmd_buffer[0] = '\0';
 }
 
-void parseCommand(char *command, char *parameters, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial)
+void parseCommand(char *command, char *parameters, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command)
 {
     switch (command[0])
     {
@@ -61,7 +61,7 @@ void parseCommand(char *command, char *parameters, RobotVelocity &robotVelocity,
     case 's': // skick
         if (sscanf(parameters, " %f", &current_cmd.power) == 1)
         {
-            execute_skick(current_cmd.power, robotVelocity, motor_command);
+            execute_skick(current_cmd.power, robotVelocity, motor_command, stop_dribbler_on_next_command);
             break;
         }
         return;
@@ -74,6 +74,6 @@ void parseCommand(char *command, char *parameters, RobotVelocity &robotVelocity,
     default:
         return;
     }
-    prepare_and_send_motor_command(robotVelocity, motor_command, robotSerial);
+    prepare_and_send_motor_command(robotVelocity, motor_command, robotSerial, stop_dribbler_on_next_command);
     Serial.println(micros() - packet_info.packet_time);
 }

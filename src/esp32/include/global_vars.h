@@ -14,6 +14,4 @@ extern PacketInfo packet_info;
 extern CommsBuffer commsBuffer;
 extern MotionCommand current_cmd;
 
-extern bool stop_dribbler_on_next_command;
-
 extern float wheel_velocities[NUM_WHEELS];

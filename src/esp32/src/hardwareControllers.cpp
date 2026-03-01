@@ -34,7 +34,7 @@ void setDribbler(bool on, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command
     motor_command[DRIBBLER_MOTOR_INDEX] = on ? DRIBBLER_ON : DRIBBLER_OFF;
 }
 
-void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial)
+void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command)
 {
     translateVelUandVelVIntoWheelVelocities(wheel_velocities, robotVelocity);
 

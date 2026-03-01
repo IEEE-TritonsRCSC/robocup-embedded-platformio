@@ -7,6 +7,4 @@ PacketInfo packet_info;
 CommsBuffer commsBuffer;
 MotionCommand current_cmd(0.0f, 0.0f, 0.0f);
 
-bool stop_dribbler_on_next_command = false;
-
 float wheel_velocities[NUM_WHEELS] = {0.0f, 0.0f, 0.0f, 0.0f};
