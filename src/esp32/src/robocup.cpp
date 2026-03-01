@@ -1,3 +1,4 @@
+#include "WiFi.h"
 #include "global_vars.h"
 #include "hardwareControllers.h"
 #include "helpers.h"
@@ -9,6 +10,7 @@
 #define TX_PIN 17
 #define RX_PIN 16
 
+WiFiUDP UDP;
 IPAddress multicastIP(239, 42, 42, 42);
 
 RobotVelocity robotVelocity;

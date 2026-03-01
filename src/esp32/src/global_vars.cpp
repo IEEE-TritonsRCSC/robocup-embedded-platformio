@@ -1,8 +1,5 @@
 #include "global_vars.h"
 
-WiFiUDP UDP;
-
-
 PacketInfo packet_info;
 CommsBuffer commsBuffer;
 
