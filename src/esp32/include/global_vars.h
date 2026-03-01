@@ -12,7 +12,6 @@ extern WiFiUDP UDP;
 
 extern PacketInfo packet_info;
 extern CommsBuffer commsBuffer;
-extern HardwareSerial robotSerial;
 extern MotionCommand current_cmd;
 
 extern bool stop_dribbler_on_next_command;

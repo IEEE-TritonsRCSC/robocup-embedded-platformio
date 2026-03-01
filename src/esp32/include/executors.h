@@ -3,8 +3,9 @@
 #include "RobotVelocity.h"
 #include "global_consts.h"
 #include "KickerState.h"
+#include "HardwareSerial.h"
 
-void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command);
+void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial);
 void execute_turn(float angular_speed, RobotVelocity &robotVelocity);
 void execute_dash(float power, float dir, RobotVelocity &robotVelocity);
 void execute_skick(float power, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command);

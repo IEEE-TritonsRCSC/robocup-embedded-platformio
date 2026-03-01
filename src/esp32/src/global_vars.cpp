@@ -2,7 +2,6 @@
 
 WiFiUDP UDP;
 
-HardwareSerial robotSerial(2);
 
 PacketInfo packet_info;
 CommsBuffer commsBuffer;

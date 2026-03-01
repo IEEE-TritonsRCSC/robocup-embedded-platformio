@@ -3,14 +3,14 @@
 #include "global_vars.h"
 #include "hardwareControllers.h"
 
-void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
+void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial)
 {
     PRINT("Stopping | ");
     robotVelocity.vel_u = 0.0f;
     robotVelocity.vel_v = 0.0f;
     robotVelocity.vel_w = 0.0f;
     setDribbler(false,motor_command);
-    prepare_and_send_motor_command(robotVelocity, motor_command);
+    prepare_and_send_motor_command(robotVelocity, motor_command, robotSerial);
 }
 
 void execute_turn(float angular_speed, RobotVelocity &robotVelocity)

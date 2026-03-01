@@ -2,6 +2,7 @@
 
 #include "RobotVelocity.h"
 #include "global_consts.h"
+#include "HardwareSerial.h"
 
 #define LED_PIN 2
 #define LED_ON HIGH
@@ -28,10 +29,10 @@
 void blink(int led, int count, int interval);
 void initializeAndBlinkLED(int led, int count, int interval);
 void setDribbler(bool on, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command);
-void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command);
+void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial);
 void connect_wifi();
 void init_motor_command(std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers);
-void sendMotorCommand(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command);
+void sendMotorCommand(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial);
 void translateVelUandVelVIntoWheelVelocities(float wheel_velocities[4], RobotVelocity &robotVelocity);
 void decayVelUandVelV(RobotVelocity &robotVelocity);
 void translateWheelVelocitiesIntoAngular(float wheel_velocities[4], int wheelIndex);

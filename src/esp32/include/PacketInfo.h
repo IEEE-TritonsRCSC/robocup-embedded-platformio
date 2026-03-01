@@ -6,6 +6,7 @@
 #include "RobotVelocity.h"
 #include "global_consts.h"
 #include "KickerState.h"
+#include "HardwareSerial.h"
 
 class PacketInfo {
     public:
@@ -27,8 +28,8 @@ class PacketInfo {
     // The network may have multiple UDP packets queue up in the buffer
     // Read all of them, but only process the last one to reduce jitter
     void readAllPackets(WiFiUDP &udp);
-    void processLastPacket(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state);
+    void processLastPacket(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial);
     void updatePacketSizeAndReadAllPackets(WiFiUDP &udp);
-    void updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state);
-    void updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state);
+    void updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial);
+    void updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial);
 };
