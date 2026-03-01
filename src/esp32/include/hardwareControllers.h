@@ -46,6 +46,7 @@ void setDribbler(bool on, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command
  * @param motor_command Motor command buffer to populate.
  * @param robotSerial Serial interface used to send commands.
  * @param stop_dribbler_on_next_command Flag indicating whether to stop the dribbler on the next command.
+ * @param wheel_velocities Wheel velocity array to update.
  */
 void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, float wheel_velocities[4]);
 /**

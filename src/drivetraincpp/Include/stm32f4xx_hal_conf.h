@@ -484,6 +484,11 @@
   */
   #define assert_param(expr) ((expr) ? (void)0U : assert_failed((uint8_t *)__FILE__, __LINE__))
 /* Exported functions ------------------------------------------------------- */
+/**
+  * @brief  Reports the name of the source file and the line number where assert failed.
+  * @param  file Source file name.
+  * @param  line Line number.
+  */
   void assert_failed(uint8_t* file, uint32_t line);
 #else
   #define assert_param(expr) ((void)0U)

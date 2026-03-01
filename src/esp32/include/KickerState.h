@@ -42,9 +42,12 @@ class KickerState {
      */
     void turnOffKicker();
     /**
-     * Starts charging the kicker.
+     * Turns on the kicker output.
      */
     void turnOnKicker();
+    /**
+     * Starts charging the kicker.
+     */
     void startCharging();
     /**
      * Stops charging the kicker.
