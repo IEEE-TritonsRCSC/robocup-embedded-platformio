@@ -112,20 +112,20 @@ void init_motor_command(std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, 
 
 void sendMotorCommand(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial) {
     PRINT(static_cast<int>(motor_command[DRIBBLER_MOTOR_INDEX]), ") | ");
-    PRINT("(", robotVelocity.vel_u, " ", robotVelocity.vel_v, " ", robotVelocity.vel_w, ")\n");
+    PRINT("(", robotVelocity.getVelU(), " ", robotVelocity.getVelV(), " ", robotVelocity.getVelW(), ")\n");
     robotSerial.write(motor_command.data(), motor_command.size());
 }
 
 void translateVelUandVelVIntoWheelVelocities(float wheel_velocities[4], RobotVelocity& robotVelocity) {
-    wheel_velocities[0] = (robotVelocity.vel_u * -sinFront) + (robotVelocity.vel_v * -cosFront); // front-right
-    wheel_velocities[1] = (robotVelocity.vel_u * sinBack) + (robotVelocity.vel_v * -cosBack);    // back-right
-    wheel_velocities[2] = (robotVelocity.vel_u * sinBack) + (robotVelocity.vel_v * cosBack);     // back-left
-    wheel_velocities[3] = (robotVelocity.vel_u * -sinFront) + (robotVelocity.vel_v * cosFront);  // front-left
+    wheel_velocities[0] = (robotVelocity.getVelU() * -sinFront) + (robotVelocity.getVelV() * -cosFront); // front-right
+    wheel_velocities[1] = (robotVelocity.getVelU() * sinBack) + (robotVelocity.getVelV() * -cosBack);    // back-right
+    wheel_velocities[2] = (robotVelocity.getVelU() * sinBack) + (robotVelocity.getVelV() * cosBack);     // back-left
+    wheel_velocities[3] = (robotVelocity.getVelU() * -sinFront) + (robotVelocity.getVelV() * cosFront);  // front-left
 }
 
 void decayVelUandVelV(RobotVelocity &robotVelocity) {
-    robotVelocity.vel_u *= 0.4;
-    robotVelocity.vel_v *= 0.4;
+    robotVelocity.multVelU(0.4);
+    robotVelocity.multVelV(0.4);
 }
 
 void translateWheelVelocitiesIntoAngular(float wheel_velocities[4], int wheelIndex) {
@@ -133,5 +133,5 @@ void translateWheelVelocitiesIntoAngular(float wheel_velocities[4], int wheelInd
 }
 
 void addAngularVelocitiesToWheelVelocities(float wheel_velocities[4], RobotVelocity &robotVelocity, int wheelIndex) {
-    wheel_velocities[wheelIndex] += robotVelocity.vel_w * rad_robot / rad_wheel;
+    wheel_velocities[wheelIndex] += robotVelocity.getVelW() * rad_robot / rad_wheel;
 }
