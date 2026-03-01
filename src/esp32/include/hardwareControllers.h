@@ -26,20 +26,24 @@
 #define cosBack (float) cosf(BACK_ANGLE * M_PI / 180)
 #define sinBack (float) sinf(BACK_ANGLE * M_PI / 180)
 
-void blink(int led, int count, int interval);
 void initializeAndBlinkLED(int led, int count, int interval);
 void setDribbler(bool on, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command);
-void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command);
+void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, float wheel_velocities[4]);
 void connect_wifi();
+
 void init_motor_command(std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers);
 void sendMotorCommand(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial);
+
 void translateVelUandVelVIntoWheelVelocities(float wheel_velocities[4], RobotVelocity &robotVelocity);
 void decayVelUandVelV(RobotVelocity &robotVelocity);
 void translateWheelVelocitiesIntoAngular(float wheel_velocities[4], int wheelIndex);
 void addAngularVelocitiesToWheelVelocities(float wheel_velocities[4], RobotVelocity &robotVelocity, int wheelIndex);
+
 void waitUntilWiFiConnected(int waitInterval);
 void printWiFiConnectingMessage();
 void printWiFiConnectedMessage();
 void beginWiFiAndWait(int waitInterval);
+
 void turnLEDOn(int led);
 void turnLEDOff(int led);
+void blink(int led, int count, int interval);

@@ -5,7 +5,7 @@
 #include "KickerState.h"
 #include "HardwareSerial.h"
 
-void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command);
+void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, float wheel_velocities[4]);
 void execute_turn(float angular_speed, RobotVelocity &robotVelocity);
 void execute_dash(float power, float dir, RobotVelocity &robotVelocity);
 void execute_skick(float power, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, bool &stop_dribbler_on_next_command);
