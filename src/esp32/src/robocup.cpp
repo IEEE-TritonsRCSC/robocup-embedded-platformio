@@ -17,6 +17,7 @@ std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers = {0xCA, 0xFE};
 KickerState kicker_state;
 HardwareSerial robotSerial(2);
 bool stop_dribbler_on_next_command = false;
+MotionCommand current_cmd(0.0f, 0.0f, 0.0f);
 
 void setup() {
   Serial.begin(BAUD_RATE);
@@ -36,7 +37,7 @@ void setup() {
 }
 
 void loop() {
-  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP, robotVelocity, motor_command, kicker_state, robotSerial, stop_dribbler_on_next_command);
+  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP, robotVelocity, motor_command, kicker_state, robotSerial, stop_dribbler_on_next_command, current_cmd);
 
   kicker_state.checkAndUpdateKickerStatus();
 }
