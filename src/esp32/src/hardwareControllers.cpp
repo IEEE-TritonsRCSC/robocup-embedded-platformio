@@ -1,8 +1,6 @@
 #include "hardwareControllers.h"
 #include <Arduino.h>
-#include "global_vars.h"
 #include "helpers.h"
-#include "credentials.h"
 #include "WiFi.h"
 
 void blink(int led, int count, int interval)
@@ -78,12 +76,12 @@ void connect_wifi() {
 }
 
 void beginWiFiAndWait(int waitInterval) {
-    WiFi.begin(SSID, PASSWORD);
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
     waitUntilWiFiConnected(waitInterval);
 }
 
 void printWiFiConnectingMessage() {
-    PRINT("\nConnecting WiFi to ", SSID);
+    PRINT("\nConnecting WiFi to ", WIFI_SSID);
 }
 void printWiFiConnectedMessage() {
     PRINT("\nWiFi connected", "\nIP address: ", WiFi.localIP(), "\n");

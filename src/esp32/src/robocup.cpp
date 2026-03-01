@@ -1,5 +1,5 @@
 #include "WiFi.h"
-#include "global_vars.h"
+#include "PacketInfo.h"
 #include "hardwareControllers.h"
 #include "helpers.h"
 
@@ -22,6 +22,7 @@ bool stop_dribbler_on_next_command = false;
 MotionCommand current_cmd(0.0f, 0.0f, 0.0f);
 float wheel_velocities[NUM_WHEELS] = {0.0f, 0.0f, 0.0f, 0.0f};
 CommsBuffer commsBuffer;
+PacketInfo packet_info;
 
 void setup() {
   Serial.begin(BAUD_RATE);

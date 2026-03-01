@@ -1,7 +1,4 @@
-#ifndef CREDENTIALS_H
-#define CREDENTIALS_H
+#pragma once
 
-#define SSID "wlan3"
-#define PASSWORD "a1b2c3d4"
-
-#endif
+#define WIFI_SSID "wlan3"
+#define WIFI_PASSWORD "a1b2c3d4"

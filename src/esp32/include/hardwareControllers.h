@@ -3,6 +3,7 @@
 #include "RobotVelocity.h"
 #include "global_consts.h"
 #include "HardwareSerial.h"
+#include "credentials.h"
 
 #define LED_PIN 2
 #define LED_ON HIGH

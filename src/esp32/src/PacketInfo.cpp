@@ -1,6 +1,5 @@
 #include "PacketInfo.h"
 #include "hardwareControllers.h"
-#include "global_vars.h"
 #include "helpers.h"
 #include "parsers.h"
 
@@ -49,7 +48,7 @@ void PacketInfo::processLastPacket(RobotVelocity &robotVelocity, std::array<uint
         for (uint16_t i = 0; i < last_packet_size; i++)
         {
             char c = commsBuffer.packet_buffer[i];
-            handleNewChar(c, robotVelocity, motor_command, kicker_state, robotSerial,stop_dribbler_on_next_command, current_cmd, wheel_velocities, commsBuffer);
+            handleNewChar(c, robotVelocity, motor_command, kicker_state, robotSerial,stop_dribbler_on_next_command, current_cmd, wheel_velocities, commsBuffer, *this);
         }
 
         turnLEDOff(LED_PIN);

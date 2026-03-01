@@ -1,6 +1,5 @@
 #include "executors.h"
 #include "helpers.h"
-#include "global_vars.h"
 #include "hardwareControllers.h"
 
 void execute_stop(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, float wheel_velocities[4])
