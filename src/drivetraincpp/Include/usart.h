@@ -40,7 +40,13 @@ extern UART_HandleTypeDef huart4;
 
 /* USER CODE END Private defines */
 
+/**
+ * @brief Initialize USART2 UART peripheral.
+ */
 void MX_USART2_UART_Init(void);
+/**
+ * @brief Initialize UART4 peripheral.
+ */
 void MX_UART4_Init(void);
 
 /* USER CODE BEGIN Prototypes */

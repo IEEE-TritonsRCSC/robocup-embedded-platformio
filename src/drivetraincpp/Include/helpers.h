@@ -97,6 +97,9 @@ struct DrivetrainState {
     PID_Data motor4PID;
     PID_Data motor_pids[NUM_WHEELS];
 
+    /**
+     * @brief Initialize drivetrain state fields to default values.
+     */
     DrivetrainState();
 };
 
@@ -136,9 +139,12 @@ void turnLEDsOff();
  */
 void turnLEDsOn();
 
-/*
-* @brief Blink status LED for `count` number of times with `delay`
-*/
+/**
+ * @brief Blink status LED for a fixed number of times.
+ *
+ * @param count Number of blinks.
+ * @param delay Delay between toggles in milliseconds.
+ */
 void flashLED(int count, int delay);
 
 /**

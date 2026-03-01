@@ -11,5 +11,8 @@ public:
     char buffer[MAX_BUFFER_SIZE];
     char cmd_buffer[MAX_COMMAND_BUFFER];
 
+    /**
+     * Initializes all buffers to zero.
+     */
     CommsBuffer() : packet_buffer{0}, buffer{0}, cmd_buffer{0} {}
 };

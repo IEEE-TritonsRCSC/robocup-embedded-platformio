@@ -38,6 +38,9 @@ extern CAN_FilterTypeDef canfilter1;
 
 /* USER CODE END Private defines */
 
+/**
+ * @brief Initialize CAN1 peripheral.
+ */
 void MX_CAN1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
