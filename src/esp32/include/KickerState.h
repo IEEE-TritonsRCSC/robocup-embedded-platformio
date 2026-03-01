@@ -23,6 +23,7 @@ class KickerState {
     void waitToChargeThenStopCharging();
 
     void turnOffKicker();
+    void turnOnKicker();
     void startCharging();
     void stopCharging();
 

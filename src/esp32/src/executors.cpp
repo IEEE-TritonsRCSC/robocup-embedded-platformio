@@ -43,7 +43,7 @@ void execute_kick(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAN
     if (kicker_state.kicker_charged)
     {
         kicker_state.kicker_charged = false;
-        digitalWrite(KICKER_PIN, HIGH); // turn ON the kicker
+        kicker_state.turnOnKicker();
         kicker_state.last_kick_time = millis();
         printKickerFiredMessage();
 

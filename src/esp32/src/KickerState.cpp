@@ -47,6 +47,10 @@ void KickerState::turnOffKicker()
     digitalWrite(KICKER_PIN, LOW); // turn OFF kicker
 }
 
+void KickerState::turnOnKicker() {
+    digitalWrite(KICKER_PIN, HIGH); // turn ON the kicker
+}
+
 void KickerState::startCharging()
 {
     digitalWrite(CHARGE_PIN, HIGH);
