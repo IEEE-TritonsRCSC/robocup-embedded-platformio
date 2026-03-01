@@ -9,7 +9,6 @@
 #include "MotionCommand.h"
 
 extern WiFiUDP UDP;
-extern IPAddress multicastIP;
 
 extern PacketInfo packet_info;
 extern CommsBuffer commsBuffer;

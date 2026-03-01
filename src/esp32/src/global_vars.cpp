@@ -1,7 +1,6 @@
 #include "global_vars.h"
 
 WiFiUDP UDP;
-IPAddress multicastIP(239, 42, 42, 42);
 
 HardwareSerial robotSerial(2);
 

@@ -9,6 +9,8 @@
 #define TX_PIN 17
 #define RX_PIN 16
 
+IPAddress multicastIP(239, 42, 42, 42);
+
 RobotVelocity robotVelocity;
 std::array<uint8_t, MOTOR_COMMAND_SIZE> motor_command;
 std::array<uint8_t, MOTOR_CMD_HEADER_SIZE> motor_cmd_headers = {0xCA, 0xFE};
