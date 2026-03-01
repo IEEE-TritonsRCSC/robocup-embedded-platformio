@@ -39,6 +39,9 @@ extern TIM_HandleTypeDef htim1;
 
 /* USER CODE END Private defines */
 
+/**
+ * @brief Initialize TIM1 peripheral.
+ */
 void MX_TIM1_Init(void);
 
 /* USER CODE BEGIN Prototypes */

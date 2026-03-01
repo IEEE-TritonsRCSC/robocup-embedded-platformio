@@ -18,13 +18,40 @@ class PacketInfo {
     int numBytes;
     int bytesParsed;
 
+    /**
+     * Initializes packet tracking state.
+     */
     PacketInfo() : packet_size(0), last_packet_size(0), packet_time(0), numBytes(0), bytesParsed(0) {}
+    /**
+     * Checks whether a packet is currently available.
+     * @return True if a packet is available, otherwise false.
+     */
     bool isPacketAvailable();
+    /**
+     * Checks whether the last packet is available.
+     * @return True if the last packet is available, otherwise false.
+     */
     bool isLastPacketAvailable();
+    /**
+     * Updates the stored last packet size.
+     */
     void updateLastPacketSize();
+    /**
+     * Updates the current packet size from the UDP interface.
+     * @param udp UDP interface to query.
+     */
     void updatePacketSize(WiFiUDP &udp);
+    /**
+     * Resets the last packet size to zero.
+     */
     void resetLastPacketSize();
+    /**
+     * Updates the packet timestamp.
+     */
     void updatePacketTime();
+    /**
+     * Prints the last packet size.
+     */
     void printLastPacketSize();
 
     // The network may have multiple UDP packets queue up in the buffer

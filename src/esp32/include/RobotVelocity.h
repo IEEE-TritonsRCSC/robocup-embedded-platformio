@@ -6,6 +6,9 @@ private:
     float vel_w;
 
 public:
+    /**
+     * Initializes all velocity components to zero.
+     */
     RobotVelocity() : vel_u(0.0f), vel_v(0.0f), vel_w(0.0f) {}
 
     void setAll(float val);

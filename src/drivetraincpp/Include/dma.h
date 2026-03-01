@@ -38,6 +38,9 @@ extern "C" {
 
 /* USER CODE END Private defines */
 
+/**
+ * @brief Initialize DMA controllers and streams.
+ */
 void MX_DMA_Init(void);
 
 /* USER CODE BEGIN Prototypes */
