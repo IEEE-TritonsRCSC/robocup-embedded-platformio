@@ -37,7 +37,7 @@ void execute_skick(float power, RobotVelocity &robotVelocity, std::array<uint8_t
     robotVelocity.vel_w = 0.0f;
 }
 
-void execute_kick(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
+void execute_kick(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state)
 {
     PRINT("Kicking the ball | ");
     setDribbler(false,motor_command);

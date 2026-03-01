@@ -38,7 +38,7 @@ void PacketInfo::readAllPackets(WiFiUDP &udp) {
     }
 }
 
-void PacketInfo::processLastPacket(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command) {
+void PacketInfo::processLastPacket(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state) {
     if (isLastPacketAvailable())
     {
         turnLEDOn(LED_PIN);
@@ -49,7 +49,7 @@ void PacketInfo::processLastPacket(RobotVelocity &robotVelocity, std::array<uint
         for (uint16_t i = 0; i < last_packet_size; i++)
         {
             char c = commsBuffer.packet_buffer[i];
-            handleNewChar(c, robotVelocity, motor_command);
+            handleNewChar(c, robotVelocity, motor_command, kicker_state);
         }
 
         turnLEDOff(LED_PIN);
@@ -65,14 +65,14 @@ void PacketInfo::updatePacketSizeAndReadAllPackets(WiFiUDP &udp) {
     readAllPackets(udp);
 }
 
-void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command) {
+void PacketInfo::updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state) {
     updatePacketSizeAndReadAllPackets(udp);
-    processLastPacket(robotVelocity, motor_command);
+    processLastPacket(robotVelocity, motor_command, kicker_state);
 }
 
-void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command)
+void PacketInfo::updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state)
 {
     resetLastPacketSize();
     updatePacketSizeAndReadAllPackets(udp);
-    processLastPacket(robotVelocity, motor_command);
+    processLastPacket(robotVelocity, motor_command, kicker_state);
 }

@@ -8,7 +8,6 @@ HardwareSerial robotSerial(2);
 PacketInfo packet_info;
 CommsBuffer commsBuffer;
 MotionCommand current_cmd(0.0f, 0.0f, 0.0f);
-KickerState kicker_state;
 
 bool stop_dribbler_on_next_command = false;
 

@@ -12,7 +12,6 @@ extern WiFiUDP UDP;
 extern IPAddress multicastIP;
 
 extern PacketInfo packet_info;
-extern KickerState kicker_state;
 extern CommsBuffer commsBuffer;
 extern HardwareSerial robotSerial;
 extern MotionCommand current_cmd;
