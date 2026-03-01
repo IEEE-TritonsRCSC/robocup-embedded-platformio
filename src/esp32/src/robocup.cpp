@@ -21,6 +21,7 @@ HardwareSerial robotSerial(2);
 bool stop_dribbler_on_next_command = false;
 MotionCommand current_cmd(0.0f, 0.0f, 0.0f);
 float wheel_velocities[NUM_WHEELS] = {0.0f, 0.0f, 0.0f, 0.0f};
+CommsBuffer commsBuffer;
 
 void setup() {
   Serial.begin(BAUD_RATE);
@@ -40,7 +41,7 @@ void setup() {
 }
 
 void loop() {
-  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP, robotVelocity, motor_command, kicker_state, robotSerial, stop_dribbler_on_next_command, current_cmd, wheel_velocities);
+  packet_info.updatePacketSizesAndReadAllPacketsAndProcessLastPacket(UDP, robotVelocity, motor_command, kicker_state, robotSerial, stop_dribbler_on_next_command, current_cmd, wheel_velocities, commsBuffer);
 
   kicker_state.checkAndUpdateKickerStatus();
 }

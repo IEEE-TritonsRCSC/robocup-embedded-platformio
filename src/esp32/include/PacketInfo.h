@@ -8,6 +8,7 @@
 #include "KickerState.h"
 #include "HardwareSerial.h"
 #include "MotionCommand.h"
+#include "CommsBuffer.h"
 
 class PacketInfo {
     public:
@@ -28,9 +29,9 @@ class PacketInfo {
 
     // The network may have multiple UDP packets queue up in the buffer
     // Read all of them, but only process the last one to reduce jitter
-    void readAllPackets(WiFiUDP &udp);
-    void processLastPacket(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, MotionCommand &current_cmd, float wheel_velocities[4]);
-    void updatePacketSizeAndReadAllPackets(WiFiUDP &udp);
-    void updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, MotionCommand &current_cmd, float wheel_velocities[4]);
-    void updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, MotionCommand &current_cmd, float wheel_velocities[4]);
+    void readAllPackets(WiFiUDP &udp, CommsBuffer &commsBuffer);
+    void updatePacketSizeAndReadAllPackets(WiFiUDP &udp, CommsBuffer &commsBuffer);
+    void processLastPacket(RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, MotionCommand &current_cmd, float wheel_velocities[4], CommsBuffer &commsBuffer);
+    void updatePacketSizeAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, MotionCommand &current_cmd, float wheel_velocities[4], CommsBuffer &commsBuffer);
+    void updatePacketSizesAndReadAllPacketsAndProcessLastPacket(WiFiUDP &udp, RobotVelocity &robotVelocity, std::array<uint8_t, MOTOR_COMMAND_SIZE> &motor_command, KickerState &kicker_state, HardwareSerial &robotSerial, bool &stop_dribbler_on_next_command, MotionCommand &current_cmd, float wheel_velocities[4], CommsBuffer &commsBuffer);
 };
