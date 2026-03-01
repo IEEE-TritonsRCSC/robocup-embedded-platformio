@@ -2,6 +2,7 @@
 #include <Arduino.h>
 #include "helpers.h"
 #include "WiFi.h"
+#include "printers.h"
 
 void blink(int led, int count, int interval)
 {
