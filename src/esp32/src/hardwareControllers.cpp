@@ -69,11 +69,16 @@ void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uin
     decayVelUandVelV(robotVelocity);
 }
 
-void connect_wifi() {
+void connectWiFi() {
     printWiFiConnectingMessage();
     const int attemptWaitInterval = 500;
     beginWiFiAndWait(attemptWaitInterval);
     printWiFiConnectedMessage();
+}
+
+void connectWiFiAndBlink(int pin, int count, int interval) {
+    connectWiFi();
+    blink(LED_PIN,count,interval);
 }
 
 void beginWiFiAndWait(int waitInterval) {

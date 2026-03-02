@@ -10,6 +10,8 @@
 #define LED_OFF LOW
 #define NUM_BLINK 4
 #define BLINK_INTERVAL 100
+#define NUM_WIFI_BLINK 10
+#define WIFI_BLINK_INTERVAL 50
 
 #define DRIBBLER_ON 0x01
 #define DRIBBLER_OFF 0x00
@@ -52,7 +54,9 @@ void prepare_and_send_motor_command(RobotVelocity &robotVelocity, std::array<uin
 /**
  * Connects to WiFi using configured credentials.
  */
-void connect_wifi();
+void connectWiFi();
+
+void connectWiFiAndBlink(int pin, int count, int interval);
 
 /**
  * Initializes the motor command buffer with header bytes.

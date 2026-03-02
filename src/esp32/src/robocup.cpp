@@ -29,7 +29,7 @@ void setup() {
 
   initializeAndBlinkLED(LED_PIN, NUM_BLINK, BLINK_INTERVAL);
 
-  connect_wifi();
+  connectWiFiAndBlink(LED_PIN,NUM_WIFI_BLINK,WIFI_BLINK_INTERVAL);
   UDP.beginMulticast(multicastIP, MULTICAST_PORT);
 
   robotSerial.begin(BAUD_RATE, SERIAL_8N1, RX_PIN, TX_PIN);
