@@ -36,6 +36,7 @@
 #define LED_RED_PORT GPIOE
 #define LED_ON GPIO_PIN_RESET
 #define LED_OFF GPIO_PIN_SET
+#define RAMP_STEP_RPM 100
 
 /*
  * motor 1 = front right motor
@@ -96,6 +97,7 @@ struct DrivetrainState {
     PID_Data motor3PID;
     PID_Data motor4PID;
     PID_Data motor_pids[NUM_WHEELS];
+    int16_t lastSpeedCommands[NUM_MOTORS];
 
     /**
      * @brief Initialize drivetrain state fields to default values.

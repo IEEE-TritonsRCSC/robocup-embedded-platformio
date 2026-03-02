@@ -43,7 +43,8 @@ DrivetrainState::DrivetrainState()
 	  motor2PID(MAX_OUTPUT, INTEGRAL_LIMIT, DEADBAND, 0, motor2_gains),
 	  motor3PID(MAX_OUTPUT, INTEGRAL_LIMIT, DEADBAND, 0, motor3_gains),
 	  motor4PID(MAX_OUTPUT, INTEGRAL_LIMIT, DEADBAND, 0, motor4_gains),
-	  motor_pids{motor1PID, motor2PID, motor3PID, motor4PID}
+	  motor_pids{motor1PID, motor2PID, motor3PID, motor4PID},
+	  lastSpeedCommands{0}
 {
 }
 
@@ -349,9 +350,36 @@ void initializeSpeedCommands(DrivetrainState *state, int16_t *speedCommands) {
 	speedCommands[NUM_WHEELS] = state->dribble_speed;
 }
 
+static void applyRampToCommands(DrivetrainState *state, int16_t *speedCommands) {
+	bool all_zero = true;
+	for (int i = 0; i < NUM_MOTORS; ++i) {
+		if (speedCommands[i] != 0) {
+			all_zero = false;
+			break;
+		}
+	}
+	if (all_zero) {
+		for (int i = 0; i < NUM_MOTORS; ++i) {
+			state->lastSpeedCommands[i] = 0;
+		}
+		return;
+	}
+	for (int i = 0; i < NUM_MOTORS; ++i) {
+		const int16_t current = state->lastSpeedCommands[i];
+		const int16_t target = speedCommands[i];
+		if (target > current) {
+			speedCommands[i] = (target - current > RAMP_STEP_RPM) ? static_cast<int16_t>(current + RAMP_STEP_RPM) : target;
+		} else if (target < current) {
+			speedCommands[i] = (current - target > RAMP_STEP_RPM) ? static_cast<int16_t>(current - RAMP_STEP_RPM) : target;
+		}
+		state->lastSpeedCommands[i] = speedCommands[i];
+	}
+}
+
 void updateMotorCommands(DrivetrainState *state) {
 	int16_t speedCommands[NUM_MOTORS] = {};
 	initializeSpeedCommands(state, speedCommands);
+	applyRampToCommands(state, speedCommands);
 	setMotorSpeeds(state, speedCommands);
 }
 
